@@ -14,10 +14,6 @@ INI=/etc/scanserver/settings.ini
 CONSOLE=4809
 ARGS="-console $CONSOLE -data $SCAN_SERVER/workspace -pluginCustomization $INI -consoleLog"
 
-export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
-
-
-export PATH=$JAVA_HOME:$PATH
 unset DISPLAY
 
 
