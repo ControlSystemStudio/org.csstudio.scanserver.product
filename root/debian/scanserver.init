@@ -1,0 +1,41 @@
+# /etc/rc.d/init.d/scanserver:  Controls the scanserver
+#
+# Version: scanserver 1.0
+#
+# chkconfig: 345 99 01
+# description: Control the scanserver
+#
+
+### BEGIN INIT INFO
+# Provides:          scanserver
+# Required-Start:    $remote_fs $local_fs $network $syslog $time
+# Required-Stop:     $remote_fs $local_fs $network $syslog
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: EPICS scan server
+# Description:       The EPICS scan server
+### END INIT INFO
+
+USER=scanserver
+PROG=/usr/share/scanserver/scanserver
+
+
+case $1 in
+start)
+    su - $USER -c "$PROG start"
+    ;;
+stop)
+    su - $USER -c "$PROG stop"
+    ;;
+status)
+    su - $USER -c "$PROG status"
+    ;;
+restart)
+    su - $USER -c "$PROG stop"
+    su - $USER -c "$PROG start"
+    ;;
+*)
+    echo $0 "start | stop | status"
+esac
+
+    

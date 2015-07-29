@@ -1,0 +1,43 @@
+#!/bin/sh
+#
+# scan_server  Service-type script to control the scan server
+#
+# chkconfig: - 80 20
+#
+# kasemirk@ornl.gov
+
+SCAN_SERVER=/usr/share/scanserver
+INI=/etc/scanserver/settings.ini
+
+# Default scan server RMI uses 4810, 4811
+# Use 4809 for telnet access
+CONSOLE=4809
+ARGS="-console $CONSOLE -data $SCAN_SERVER/workspace -pluginCustomization $INI -consoleLog"
+
+export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
+
+
+export PATH=$JAVA_HOME:$PATH
+unset DISPLAY
+
+
+case $1 in
+start)
+	nohup $SCAN_SERVER/ScanServer $ARGS >>$SCAN_SERVER/console.log 2>&1 &
+	;;
+stop)
+	echo close | nc localhost $CONSOLE
+	;;
+restart)
+	echo close | nc localhost $CONSOLE
+	nohup $SCAN_SERVER/ScanServer $ARGS >>$SCAN_SERVER/console.log 2>&1 &
+	;;
+status)
+	ps aux | fgrep ScanServer | grep -v fgrep
+	;;
+telnet)
+	telnet localhost $CONSOLE
+	;;
+*)	echo "Usage: $0 {start|stop|restart|status|telnet}"
+        exit 2
+esac

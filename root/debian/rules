@@ -1,0 +1,13 @@
+#!/usr/bin/make -f
+
+override_dh_shlibdeps:
+	dh_shlibdeps --exclude='.so'
+
+override_dh_strip:
+	dh_strip --exclude='.so'
+
+%:
+	dh $@
+
+.PHONY: build clean override_dh_strip
+.PHONY: build clean override_dh_shlibdeps

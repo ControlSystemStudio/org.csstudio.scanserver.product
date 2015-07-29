@@ -1,0 +1,19 @@
+#!/bin/sh 
+
+
+case "$1" in
+  remove)
+    service scanserver stop
+
+    userdel -r scanserver
+
+    ;;
+  failed-upgrade)
+    ;;
+  deconfigure)
+    ;;
+  *)
+    ;;
+esac
+
+exit 0

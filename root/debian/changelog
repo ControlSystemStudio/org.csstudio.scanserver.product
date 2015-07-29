@@ -1,0 +1,24 @@
+scanserver (4.1.1-0) unstable; urgency=low
+
+  * update to 4.1.x
+
+ -- Eric Berryman <berryman@frib.msu.edu>  Tue, 28 Jul 2015 08:56:43 -0400
+
+scanserver (1.0.2-0) unstable; urgency=low
+
+  * updated to eclipse 4
+
+ -- Eric Berryman <berryman@frib.msu.edu>  Fri, 10 Oct 2014 08:56:43 -0400
+
+scanserver (1.0.1-1) unstable; urgency=low
+
+  * interface changed to REST
+
+ -- Eric Berryman <berryman@frib.msu.edu>  Mon, 04 Nov 2013 09:35:45 -0400
+
+scanserver (1.0.0-0) unstable; urgency=low
+
+  * initial
+
+ -- Eric Berryman <berryman@frib.msu.edu>  Fri, 14 Jun 2013 09:34:33 -0400
+
