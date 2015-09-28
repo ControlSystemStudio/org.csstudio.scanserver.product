@@ -16,7 +16,7 @@
   xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.csstudio</groupId>
-  <artifactId>frib-scanserver</artifactId>
+  <artifactId>scanserver</artifactId>
   <version>BUILD-VERSION</version>
   <packaging>pom</packaging>
 
@@ -28,7 +28,7 @@
   <!-- PROPERTIES -->
   <properties>
     <!-- VERSIONS -->
-    <frib.version>4.1.1</frib.version>
+    <scan.version>4.1.1</scan.version>
 
     <tycho.version>0.22.0</tycho.version>
     <tycho-extras.version>0.22.0</tycho-extras.version>

@@ -10,12 +10,12 @@ Builds SNS products, place in local repo
 
   <parent>
     <groupId>org.csstudio</groupId>
-    <artifactId>frib-scanserver</artifactId>
+    <artifactId>scanserver</artifactId>
     <version>BUILD-VERSION</version>
   </parent>
 
   <groupId>org.csstudio</groupId>
-  <artifactId>frib-scanserver-repository</artifactId>
+  <artifactId>scanserver-repository</artifactId>
   <version>4.0.0-SNAPSHOT</version>
   <packaging>eclipse-repository</packaging>
 
@@ -37,8 +37,8 @@ Builds SNS products, place in local repo
           <products>
             <product>
               <id>scan-server</id>
-              <rootFolder>scan-server-${frib.version}</rootFolder>
-              <archiveFileName>scan-server-${frib.version}</archiveFileName>
+              <rootFolder>scan-server-${scan.version}</rootFolder>
+              <archiveFileName>scan-server-${scan.version}</archiveFileName>
               <attachId>scan-server</attachId>
             </product>
            
