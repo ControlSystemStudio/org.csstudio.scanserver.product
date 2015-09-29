@@ -41,7 +41,7 @@ use File::Basename;
 use Cwd;
 use Dpkg::Compression;
 use Dpkg::Vendor qw(get_current_vendor);
-use lib ${WORKSPACE}'/usr/share/devscripts';
+use lib "$ENV{'WORKSPACE'}/usr/share/devscripts";
 use Devscripts::Debbugs;
 
 # Predeclare functions
