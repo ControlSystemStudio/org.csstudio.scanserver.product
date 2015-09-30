@@ -7,4 +7,4 @@ dch -i "${changelog}"
 dch -r "${changelog}"
 git commit -m "${changelog}" -- debian/changelog
 git push origin HEAD:master
-dpkg-buildpackage -rfakeroot -D -us -uc -i -I
+dpkg-buildpackage -rfakeroot -d -D -us -uc -i -I
