@@ -1,3 +1,9 @@
+scanserver (4.1.1-4) unstable; urgency=low
+
+  * Jenkins test
+
+ -- Jenkins <jenkins@localhost.localdomain>  Wed, 30 Sep 2015 10:43:34 -0400
+
 scanserver (4.1.1-3) unstable; urgency=low
 
   * Initial Jenkins built debian package
