@@ -3,8 +3,8 @@ cp root/scanserver_exec root/scanserver/scanserver
 chmod a+x root/scanserver/ScanServer
 chmod a+x root/scanserver/scanserver
 cd root
-dch -i "${changelog}"
-dch -r "${changelog}"
-git commit -m "${changelog}" -- debian/changelog
+dch -i "${TRAVIS_COMMIT}"
+dch -r "${TRAVIS_COMMIT}"
+git commit -m "${TRAVIS_COMMIT} [ci skip]" -- debian/changelog
 git push origin HEAD:master
 dpkg-buildpackage -rfakeroot -d -us -uc -i -I
