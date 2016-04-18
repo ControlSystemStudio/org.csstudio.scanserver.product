@@ -11,5 +11,5 @@ before_script:
  - echo "MAVEN_OPTS='-Xmx2g -Xms1g'" > ~/.mavenrc
 
 script:
- - mvn clean verify -Declipse.p2.mirrors=false -Dtycho.localArtifacts=ignore
- - ./builddebian
+ - mvn clean verify -Declipse.p2.mirrors=false -Dtycho.localArtifacts=ignore; ./builddebian
+
