@@ -8,6 +8,7 @@ jdk:
 install: echo 'Skipping mvn install'
 
 before_script:
+ - chmod a+x dch
  - chmod a+x builddebian
  - echo "MAVEN_OPTS='-Xmx2g -Xms1g'" > ~/.mavenrc
 
