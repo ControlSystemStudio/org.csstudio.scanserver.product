@@ -8,8 +8,12 @@ jdk:
 install: echo 'Skipping mvn install'
 
 before_script:
+ - chmod a+x builddebian
  - echo "MAVEN_OPTS='-Xmx2g -Xms1g'" > ~/.mavenrc
 
 script:
- - mvn clean verify -Declipse.p2.mirrors=false -Dtycho.localArtifacts=ignore; ./builddebian
+ - mvn clean verify -Declipse.p2.mirrors=false -Dtycho.localArtifacts=ignore
+
+after_success:
+ - ./builddebian
 

@@ -33,6 +33,7 @@
     <tycho.version>0.25.0</tycho.version>
     <tycho-extras.version>0.25.0</tycho-extras.version>
     <eclipse-site>http://download.eclipse.org/releases/mars</eclipse-site>
+    <eclipse-update-site>http://download.eclipse.org/eclipse/updates/4.5</eclipse-update-site>
     <!-- PyDev web site suggests http://pydev.org/updates/, which redirects to this: -->
     <pydev-site>http://update-production-pydev.s3.amazonaws.com/pydev/updates</pydev-site>
 
@@ -58,8 +59,13 @@
   -->
   <repositories>
     <repository>
-      <id>Eclipse</id>
+      <id>eclipse-main</id>
       <url>${eclipse-site}</url>
+      <layout>p2</layout>
+    </repository>
+    <repository>
+      <id>eclipse-update</id>
+      <url>${eclipse-update-site}</url>
       <layout>p2</layout>
     </repository>
     <repository>
@@ -165,21 +171,6 @@
 
   <profiles>
     <!-- If a local repository is specified, use that. -->
-    <profile>
-      <id>csstudio-local-repo-enable</id>
-      <activation>
-        <file>
-          <exists>${csstudio.local.repo}/artifacts.jar</exists>
-        </file>
-      </activation>
-      <repositories>
-        <repository>
-          <id>csstudio-local-repo</id>
-          <url>file:${csstudio.local.repo}</url>
-          <layout>p2</layout>
-        </repository>
-      </repositories>
-    </profile>
 
     <profile>
       <id>csstudio-composite-repo-enable</id>
